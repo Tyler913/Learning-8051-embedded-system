@@ -1,0 +1,3 @@
+".\Objects\main.obj" 
+TO ".\Objects\built-in-library" 
+PRINT(".\Listings\built-in-library.m51") RAMSIZE(256) 
