@@ -23,10 +23,10 @@ void main() {
 			dealy(50000);
 		}
 		
-		//for (i = 0 ; i < 7 ; ++i) {
+		for (i = 0 ; i < 7 ; ++i) {
 			LED_PORT = _cror_(LED_PORT, 1);
 			dealy(50000);
-		//}
+		}
 		
 	}
 }

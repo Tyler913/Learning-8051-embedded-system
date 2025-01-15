@@ -1,0 +1,3 @@
+".\Objects\digital_tube_dynamic.obj" 
+TO ".\Objects\DigitalTube_Dynamic" 
+PRINT(".\Listings\DigitalTube_Dynamic.m51") RAMSIZE(256) 
