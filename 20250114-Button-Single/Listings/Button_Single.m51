@@ -1,0 +1,140 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    01/18/2025  17:35:21  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+D:\APPLICATIONS\KEIL5-C51\C51\BIN\BL51.EXE .\Objects\button_single.obj TO .\Objects\Button_Single PRINT (.\Listings\Butt
+>> on_Single.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\button_single.obj (BUTTON_SINGLE)
+  D:\APPLICATIONS\KEIL5-C51\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\APPLICATIONS\KEIL5-C51\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\Button_Single (BUTTON_SINGLE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0001H     UNIT         ?DT?BUTTON_SINGLE
+            IDATA   0009H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     008CH     UNIT         ?C_C51STARTUP
+            CODE    008FH     004CH     UNIT         ?PR?_KEY_SCAN?BUTTON_SINGLE
+            CODE    00DBH     000CH     UNIT         ?PR?MAIN?BUTTON_SINGLE
+            CODE    00E7H     000BH     UNIT         ?PR?_DELAY?BUTTON_SINGLE
+            CODE    00F2H     0004H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Button_Single (BUTTON_SINGLE)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?BUTTON_SINGLE
+  +--> ?C_INITSEG
+
+?PR?MAIN?BUTTON_SINGLE
+  +--> ?PR?_KEY_SCAN?BUTTON_SINGLE
+
+?PR?_KEY_SCAN?BUTTON_SINGLE
+  +--> ?PR?_DELAY?BUTTON_SINGLE
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Button_Single (BUTTON_SINGLE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  01/18/2025  17:35:21  PAGE 2
+
+
+  -------         MODULE        BUTTON_SINGLE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00A0H.0       PUBLIC        LED1
+  D:00A8H         PUBLIC        IE
+  C:00E7H         PUBLIC        _delay
+  D:00B8H         PUBLIC        IP
+  B:00B0H.1       PUBLIC        KEY1
+  B:00B0H.0       PUBLIC        KEY2
+  B:00B0H.2       PUBLIC        KEY3
+  B:00B0H.3       PUBLIC        KEY4
+  C:00DBH         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:008FH         PUBLIC        _key_scan
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        number
+  C:00E7H         LINE#         23
+  C:00E7H         LINE#         24
+  C:00F1H         LINE#         25
+  -------         ENDPROC       _DELAY
+  -------         PROC          _KEY_SCAN
+  D:0007H         SYMBOL        mode
+  -------         DO            
+  D:0008H         SYMBOL        key
+  -------         ENDDO         
+  C:008FH         LINE#         28
+  C:008FH         LINE#         32
+  C:0092H         LINE#         33
+  C:0095H         LINE#         34
+  C:0095H         LINE#         36
+  C:00A7H         LINE#         37
+  C:00AEH         LINE#         39
+  C:00B1H         LINE#         41
+  C:00B4H         LINE#         42
+  C:00B7H         LINE#         43
+  C:00B7H         LINE#         44
+  C:00BAH         LINE#         45
+  C:00BDH         LINE#         46
+  C:00BDH         LINE#         47
+  C:00C0H         LINE#         48
+  C:00C3H         LINE#         49
+  C:00C3H         LINE#         50
+  C:00C6H         LINE#         51
+  C:00C9H         LINE#         52
+  C:00C9H         LINE#         53
+  C:00C9H         LINE#         54
+  C:00D5H         LINE#         55
+  C:00D8H         LINE#         56
+  C:00D8H         LINE#         58
+  C:00DAH         LINE#         59
+  -------         ENDPROC       _KEY_SCAN
+  -------         PROC          MAIN
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  01/18/2025  17:35:21  PAGE 3
+
+
+  -------         DO            
+  D:0007H         SYMBOL        key
+  -------         ENDDO         
+  C:00DBH         LINE#         62
+  C:00DBH         LINE#         64
+  C:00DBH         LINE#         66
+  C:00DBH         LINE#         67
+  C:00E0H         LINE#         69
+  C:00E3H         LINE#         70
+  C:00E5H         LINE#         71
+  C:00E5H         LINE#         72
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        BUTTON_SINGLE
+
+Program Size: data=10.0 xdata=0 code=246
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
