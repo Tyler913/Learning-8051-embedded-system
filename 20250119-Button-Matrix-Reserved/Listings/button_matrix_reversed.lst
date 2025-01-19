@@ -1,0 +1,113 @@
+C51 COMPILER V9.60.7.0   BUTTON_MATRIX_REVERSED                                            01/19/2025 16:57:36 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE BUTTON_MATRIX_REVERSED
+OBJECT MODULE PLACED IN .\Objects\button_matrix_reversed.obj
+COMPILER INVOKED BY: D:\Applications\Keil5-C51\C51\BIN\C51.EXE button_matrix_reversed.c OPTIMIZE(8,SPEED) BROWSE DEBUG O
+                    -BJECTEXTEND PRINT(.\Listings\button_matrix_reversed.lst) OBJECT(.\Objects\button_matrix_reversed.obj)
+
+line level    source
+
+   1          #include "reg52.h"
+   2          
+   3          
+   4          typedef unsigned char u8;
+   5          typedef unsigned int u16;
+   6          
+   7          
+   8          #define DIGITAL_TUBE_PORT P0
+   9          u8 g_digital_tube_code[] = {0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 0x07, 0x7f, 0x6f, 0x77, 0x7c, 0x39, 
+             -0x5e, 0x79, 0x71};
+  10          
+  11          #define MATRIX_KEY_PORT P1
+  12          
+  13          
+  14          void delay(u16 number) {
+  15   1              while (number--);
+  16   1      }
+  17          
+  18          
+  19          u8 matrix_key_scan_reserved() {
+  20   1              static u8 key_value = 0;
+  21   1              
+  22   1              MATRIX_KEY_PORT = 0x0f;
+  23   1              
+  24   1              if (MATRIX_KEY_PORT != 0x0f) {
+  25   2                      delay(1000);
+  26   2                      
+  27   2                      if (MATRIX_KEY_PORT != 0x0f) {
+  28   3                              switch (MATRIX_KEY_PORT) {
+  29   4                                      case 0x07:
+  30   4                                              key_value = 1;
+  31   4                                              break;
+  32   4                                      
+  33   4                                      case 0x0b:
+  34   4                                              key_value = 2;
+  35   4                                              break;
+  36   4                                      
+  37   4                                      case 0x0d:
+  38   4                                              key_value = 3;
+  39   4                                              break;
+  40   4                                      
+  41   4                                      case 0x0e:
+  42   4                                              key_value = 4; 
+  43   4                                              break;
+  44   4                              }
+  45   3                              
+  46   3                              MATRIX_KEY_PORT = 0xf0;
+  47   3                              switch (MATRIX_KEY_PORT) {
+  48   4                                      case 0x70:
+  49   4                                              key_value += 0;
+  50   4                                              break;
+  51   4                                      
+  52   4                                      case 0xb0:
+  53   4                                              key_value += 4;
+C51 COMPILER V9.60.7.0   BUTTON_MATRIX_REVERSED                                            01/19/2025 16:57:36 PAGE 2   
+
+  54   4                                              break;
+  55   4                                      
+  56   4                                      case 0xd0:
+  57   4                                              key_value += 8;
+  58   4                                              break;
+  59   4                                      
+  60   4                                      case 0xe0:
+  61   4                                              key_value += 12;
+  62   4                                              break;
+  63   4                              }
+  64   3                              
+  65   3                              while (MATRIX_KEY_PORT != 0xf0);
+  66   3                      }
+  67   2              }
+  68   1              else {
+  69   2                      key_value = 0;
+  70   2              }
+  71   1              
+  72   1              return key_value;
+  73   1      }
+  74          
+  75          
+  76          void main() {
+  77   1              
+  78   1              u8 key_value_returned = 0;
+  79   1              
+  80   1              while (1) {
+  81   2                      key_value_returned = matrix_key_scan_reserved();
+  82   2                      
+  83   2                      DIGITAL_TUBE_PORT = g_digital_tube_code[key_value_returned - 1];
+  84   2                      delay(10000);
+  85   2              }
+  86   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    142    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     17    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

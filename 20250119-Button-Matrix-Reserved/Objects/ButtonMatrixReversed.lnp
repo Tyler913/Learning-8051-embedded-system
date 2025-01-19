@@ -1,0 +1,3 @@
+".\Objects\button_matrix_reversed.obj" 
+TO ".\Objects\ButtonMatrixReversed" 
+PRINT(".\Listings\ButtonMatrixReversed.m51") RAMSIZE(256) 
