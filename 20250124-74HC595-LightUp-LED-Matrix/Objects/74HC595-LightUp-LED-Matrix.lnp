@@ -1,0 +1,3 @@
+".\Objects\74HC595_Led_Matrix.obj" 
+TO ".\Objects\74HC595-LightUp-LED-Matrix" 
+PRINT(".\Listings\74HC595-LightUp-LED-Matrix.m51") RAMSIZE(256) 

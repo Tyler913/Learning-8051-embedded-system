@@ -182,11 +182,11 @@
       <GroupNumber>1</GroupNumber>
       <FileNumber>1</FileNumber>
       <FileType>1</FileType>
-      <tvExp>1</tvExp>
+      <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\button_matrix_reversed.c</PathWithFileName>
-      <FilenameWithoutPath>button_matrix_reversed.c</FilenameWithoutPath>
+      <PathWithFileName>.\74HC595_Led_Matrix.c</PathWithFileName>
+      <FilenameWithoutPath>74HC595_Led_Matrix.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
