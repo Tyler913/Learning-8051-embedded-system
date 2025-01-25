@@ -1,0 +1,114 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    01/25/2025  13:54:16  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+D:\APPLICATIONS\KEIL5-C51\C51\BIN\BL51.EXE .\Objects\single_led_led_matrix.obj TO .\Objects\SingleLED-LED-Matrix PRINT (
+>> .\Listings\SingleLED-LED-Matrix.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\single_led_led_matrix.obj (SINGLE_LED_LED_MATRIX)
+  D:\APPLICATIONS\KEIL5-C51\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\SingleLED-LED-Matrix (SINGLE_LED_LED_MATRIX)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     003AH     UNIT         ?PR?_CHIP_74HC595_SEND_DATA?SINGLE_LED_LED_MATRIX
+            CODE    003DH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0049H     000BH     UNIT         ?PR?_DELAY?SINGLE_LED_LED_MATRIX
+            CODE    0054H     000AH     UNIT         ?PR?MAIN?SINGLE_LED_LED_MATRIX
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\SingleLED-LED-Matrix (SINGLE_LED_LED_MATRIX)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?SINGLE_LED_LED_MATRIX
+
+?PR?MAIN?SINGLE_LED_LED_MATRIX
+  +--> ?PR?_CHIP_74HC595_SEND_DATA?SINGLE_LE...
+
+?PR?_CHIP_74HC595_SEND_DATA?SINGLE_LE...
+  +--> ?PR?_DELAY?SINGLE_LED_LED_MATRIX
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\SingleLED-LED-Matrix (SINGLE_LED_LED_MATRIX)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        SINGLE_LED_LED_MATRIX
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  B:00B0H.6       PUBLIC        SRCLK
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  01/25/2025  13:54:16  PAGE 2
+
+
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  C:0049H         PUBLIC        _delay
+  D:00B8H         PUBLIC        IP
+  C:0054H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  B:00B0H.5       PUBLIC        rCLK
+  D:00C8H         PUBLIC        T2CON
+  B:00B0H.4       PUBLIC        SER
+  C:0003H         PUBLIC        _chip_74hc595_send_data
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        number
+  C:0049H         LINE#         16
+  C:0049H         LINE#         17
+  C:0053H         LINE#         18
+  -------         ENDPROC       _DELAY
+  -------         PROC          _CHIP_74HC595_SEND_DATA
+  D:0005H         SYMBOL        input
+  -------         DO            
+  D:0003H         SYMBOL        i
+  -------         ENDDO         
+  C:0003H         LINE#         21
+  C:0005H         LINE#         22
+  C:0007H         LINE#         24
+  C:0007H         LINE#         25
+  C:0012H         LINE#         26
+  C:0016H         LINE#         28
+  C:0018H         LINE#         29
+  C:001EH         LINE#         30
+  C:0020H         LINE#         31
+  C:0027H         LINE#         32
+  C:002BH         LINE#         34
+  C:002DH         LINE#         35
+  C:0034H         LINE#         36
+  C:0036H         LINE#         37
+  -------         ENDPROC       _CHIP_74HC595_SEND_DATA
+  -------         PROC          MAIN
+  C:0054H         LINE#         41
+  C:0054H         LINE#         43
+  C:0057H         LINE#         45
+  C:0057H         LINE#         46
+  C:005CH         LINE#         47
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        SINGLE_LED_LED_MATRIX
+
+Program Size: data=9.0 xdata=0 code=94
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

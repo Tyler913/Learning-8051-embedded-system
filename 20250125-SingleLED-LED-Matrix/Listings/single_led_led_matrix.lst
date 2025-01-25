@@ -1,0 +1,74 @@
+C51 COMPILER V9.60.7.0   SINGLE_LED_LED_MATRIX                                             01/25/2025 13:54:16 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE SINGLE_LED_LED_MATRIX
+OBJECT MODULE PLACED IN .\Objects\single_led_led_matrix.obj
+COMPILER INVOKED BY: D:\Applications\Keil5-C51\C51\BIN\C51.EXE single_led_led_matrix.c OPTIMIZE(8,SPEED) BROWSE DEBUG OB
+                    -JECTEXTEND PRINT(.\Listings\single_led_led_matrix.lst) OBJECT(.\Objects\single_led_led_matrix.obj)
+
+line level    source
+
+   1          #include "reg52.h"
+   2          
+   3          
+   4          typedef unsigned char u8;
+   5          typedef unsigned int u16;
+   6          
+   7          
+   8          sbit SRCLK = P3^6;
+   9          sbit rCLK = P3^5;
+  10          sbit SER = P3^4;
+  11          
+  12          
+  13          #define LED_MATRIX_COLUMN_PORT P0
+  14          
+  15          
+  16          void delay(u16 number) {
+  17   1              while (number--);
+  18   1      }
+  19          
+  20          
+  21          void chip_74hc595_send_data(u8 input) {
+  22   1              u8 i = 0;
+  23   1              
+  24   1              for (i = 0 ; i < 8 ; i++) {
+  25   2                      SER = input >> 7;
+  26   2                      input = input << 1;
+  27   2                      
+  28   2                      SRCLK = 0;
+  29   2                      delay(0);
+  30   2                      SRCLK = 1;
+  31   2                      delay(1);
+  32   2              }
+  33   1              
+  34   1              rCLK = 0;
+  35   1              delay(1);
+  36   1              rCLK = 1;
+  37   1              delay(1);
+  38   1      }
+  39          
+  40          
+  41          void main() {
+  42   1              
+  43   1              LED_MATRIX_COLUMN_PORT = 0x7f;
+  44   1              
+  45   1              while (1) {
+  46   2                      chip_74hc595_send_data(0x80);
+  47   2              }
+  48   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     79    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+C51 COMPILER V9.60.7.0   SINGLE_LED_LED_MATRIX                                             01/25/2025 13:54:16 PAGE 2   
+
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
