@@ -1,0 +1,135 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    01/25/2025  14:32:40  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+D:\APPLICATIONS\KEIL5-C51\C51\BIN\BL51.EXE .\Objects\light_up_numbers_LED_mateix.obj TO .\Objects\Number-LED-MAtrix PRIN
+>> T (.\Listings\Number-LED-MAtrix.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\light_up_numbers_LED_mateix.obj (LIGHT_UP_NUMBERS_LED_MATEIX)
+  D:\APPLICATIONS\KEIL5-C51\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\APPLICATIONS\KEIL5-C51\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\Number-LED-MAtrix (LIGHT_UP_NUMBERS_LED_MATEIX)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0010H     UNIT         ?DT?LIGHT_UP_NUMBERS_LED_MATEIX
+            IDATA   0018H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     008CH     UNIT         ?C_C51STARTUP
+            CODE    008FH     002FH     UNIT         ?PR?_CHIP_74HC595_SEND_DATA?LIGHT_UP_NUMBERS_LED_MATEIX
+            CODE    00BEH     0024H     UNIT         ?PR?MAIN?LIGHT_UP_NUMBERS_LED_MATEIX
+            CODE    00E2H     0015H     UNIT         ?C_INITSEG
+            CODE    00F7H     000FH     UNIT         ?PR?_DELAY?LIGHT_UP_NUMBERS_LED_MATEIX
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Number-LED-MAtrix (LIGHT_UP_NUMBERS_LED_MATEIX)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?LIGHT_UP_NUMBERS_LED_MATEIX
+  +--> ?C_INITSEG
+
+?PR?MAIN?LIGHT_UP_NUMBERS_LED_MATEIX
+  +--> ?PR?_CHIP_74HC595_SEND_DATA?LIGHT_UP_...
+  +--> ?PR?_DELAY?LIGHT_UP_NUMBERS_LED_MATEIX
+
+?PR?_CHIP_74HC595_SEND_DATA?LIGHT_UP_...
+  +--> ?PR?_DELAY?LIGHT_UP_NUMBERS_LED_MATEIX
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Number-LED-MAtrix (LIGHT_UP_NUMBERS_LED_MATEIX)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  01/25/2025  14:32:40  PAGE 2
+
+
+
+  -------         MODULE        LIGHT_UP_NUMBERS_LED_MATEIX
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  B:00B0H.6       PUBLIC        SRCLK
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  C:00FBH         PUBLIC        _delay
+  D:00B8H         PUBLIC        IP
+  C:00BEH         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:0008H         PUBLIC        g_led_row
+  B:00B0H.5       PUBLIC        rCLK
+  D:00C8H         PUBLIC        T2CON
+  B:00B0H.4       PUBLIC        SER
+  C:008FH         PUBLIC        _chip_74hc595_send_data
+  D:0010H         PUBLIC        g_led_column
+  D:00D0H         PUBLIC        PSW
+  C:00F7H         SYMBOL        L?0016
+  -------         PROC          L?0015
+  -------         ENDPROC       L?0015
+  C:00F7H         SYMBOL        L?0016
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time
+  C:00FBH         LINE#         20
+  C:00FBH         LINE#         21
+  C:0105H         LINE#         22
+  -------         ENDPROC       _DELAY
+  -------         PROC          _CHIP_74HC595_SEND_DATA
+  D:0005H         SYMBOL        input
+  -------         DO            
+  D:0003H         SYMBOL        i
+  -------         ENDDO         
+  C:008FH         LINE#         25
+  C:0091H         LINE#         26
+  C:0093H         LINE#         28
+  C:0093H         LINE#         29
+  C:009EH         LINE#         30
+  C:00A2H         LINE#         32
+  C:00A4H         LINE#         33
+  C:00A7H         LINE#         34
+  C:00A9H         LINE#         35
+  C:00ACH         LINE#         36
+  C:00B0H         LINE#         38
+  C:00B2H         LINE#         39
+  C:00B5H         LINE#         40
+  C:00B7H         LINE#         41
+  -------         ENDPROC       _CHIP_74HC595_SEND_DATA
+  -------         PROC          MAIN
+  -------         DO            
+  D:0002H         SYMBOL        i
+  -------         ENDDO         
+  C:00BEH         LINE#         45
+  C:00BEH         LINE#         47
+  C:00BEH         LINE#         49
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  01/25/2025  14:32:40  PAGE 3
+
+
+  C:00BEH         LINE#         50
+  C:00C0H         LINE#         51
+  C:00C7H         LINE#         52
+  C:00D0H         LINE#         53
+  C:00D7H         LINE#         54
+  C:00DCH         LINE#         55
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        LIGHT_UP_NUMBERS_LED_MATEIX
+
+Program Size: data=25.0 xdata=0 code=262
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
