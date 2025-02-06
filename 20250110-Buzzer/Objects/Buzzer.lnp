@@ -1,3 +1,0 @@
-".\Objects\buzzer.obj" 
-TO ".\Objects\Buzzer" 
-PRINT(".\Listings\Buzzer.m51") RAMSIZE(256) 

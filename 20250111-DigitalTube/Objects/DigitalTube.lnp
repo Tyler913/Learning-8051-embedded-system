@@ -1,3 +1,0 @@
-".\Objects\digital-tube.obj" 
-TO ".\Objects\DigitalTube" 
-PRINT(".\Listings\DigitalTube.m51") RAMSIZE(256) 

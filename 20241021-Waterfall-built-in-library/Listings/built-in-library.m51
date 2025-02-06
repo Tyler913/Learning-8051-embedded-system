@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    10/23/2024  03:06:52  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    10/21/2024  20:40:11  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
@@ -26,9 +26,9 @@ LINK MAP OF MODULE:  .\Objects\built-in-library (MAIN)
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
-            CODE    0003H     0030H     UNIT         ?PR?MAIN?MAIN
-            CODE    0033H     0011H     UNIT         ?PR?_DEALY?MAIN
-            CODE    0044H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0003H     0027H     UNIT         ?PR?MAIN?MAIN
+            CODE    002AH     0011H     UNIT         ?PR?_DEALY?MAIN
+            CODE    003BH     000CH     UNIT         ?C_C51STARTUP
 
 
 
@@ -57,9 +57,9 @@ SYMBOL TABLE OF MODULE:  .\Objects\built-in-library (MAIN)
   D:00A0H         PUBLIC        P2
   D:00B0H         PUBLIC        P3
   D:00A8H         PUBLIC        IE
-  C:0039H         PUBLIC        _dealy
+  C:0030H         PUBLIC        _dealy
   D:00B8H         PUBLIC        IP
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  10/23/2024  03:06:52  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  10/21/2024  20:40:11  PAGE 2
 
 
   C:0003H         PUBLIC        main
@@ -67,13 +67,13 @@ SYMBOL TABLE OF MODULE:  .\Objects\built-in-library (MAIN)
   D:0088H         PUBLIC        TCON
   D:00C8H         PUBLIC        T2CON
   D:00D0H         PUBLIC        PSW
-  -------         PROC          L?0018
-  -------         ENDPROC       L?0018
+  -------         PROC          L?0015
+  -------         ENDPROC       L?0015
   -------         PROC          _DEALY
   D:0006H         SYMBOL        time
-  C:0039H         LINE#         9
-  C:0039H         LINE#         10
-  C:0043H         LINE#         11
+  C:0030H         LINE#         9
+  C:0030H         LINE#         10
+  C:003AH         LINE#         11
   -------         ENDPROC       _DEALY
   -------         PROC          MAIN
   -------         DO            
@@ -87,12 +87,11 @@ SYMBOL TABLE OF MODULE:  .\Objects\built-in-library (MAIN)
   C:0008H         LINE#         22
   C:0013H         LINE#         23
   C:0016H         LINE#         24
-  C:001AH         LINE#         26
-  C:0022H         LINE#         27
-  C:002DH         LINE#         28
-  C:0030H         LINE#         29
+  C:001AH         LINE#         27
+  C:0025H         LINE#         28
+  C:0028H         LINE#         31
   -------         ENDPROC       MAIN
   -------         ENDMOD        MAIN
 
-Program Size: data=9.0 xdata=0 code=80
+Program Size: data=9.0 xdata=0 code=71
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
