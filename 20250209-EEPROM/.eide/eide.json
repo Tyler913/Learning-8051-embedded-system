@@ -37,7 +37,13 @@
       },
       "custom_dep": {
         "name": "default",
-        "incList": [],
+        "incList": [
+          "src/Public",
+          "src/Application/Digital_Tube",
+          "src/Application/Key",
+          "src/Application/AT24C02",
+          "src/Application/I2C"
+        ],
         "libList": [],
         "defineList": []
       },
